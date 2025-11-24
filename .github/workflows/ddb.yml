@@ -24,4 +24,4 @@ jobs:
         pip install duckdb
     - name: Run Tests
       run: |
-        python manage.py test
+        python manage.py
