@@ -6,6 +6,8 @@ if not token:
 	raise RuntimeError("MOTHERDUCK_TOKEN environment variable not set.")
 
 # Connect to MotherDuck using the token
-con = duckdb.connect(database='github_actions', config={'motherduck_token': token})
-con.execute("CREATE OR REPLACE TABLE test_table AS SELECT 1 AS tester")
+con = duckdb.connect(
+    database='md:github_action',
+    config = {'motherduck_token': token} )
+con.sql("CREATE OR REPLACE TABLE github_action.test_table AS SELECT 1 AS tester")
 con.close()
