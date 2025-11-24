@@ -23,5 +23,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install duckdb
     - name: Run Tests
+      env:
+        MY_SECRET_VARIABLE: ${{ secrets.MOTHERDUCK_TOKEN }} # Map GitHub secret to an environment variable
       run: |
         python manage.py
