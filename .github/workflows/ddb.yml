@@ -26,5 +26,4 @@ jobs:
       env:
         MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }} # Map GitHub secret to an environment variable
       run: |
-        echo "${{ env.MOTHERDUCK_TOKEN }}"
         python manage.py
