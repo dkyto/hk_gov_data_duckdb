@@ -1,7 +1,7 @@
 import duckdb
 import os
 
-token = os.environ.get("MOTHERDUCK_TOKEN")
+token = os.getenv("MOTHERDUCK_TOKEN")
 if not token:
 	raise RuntimeError("MOTHERDUCK_TOKEN environment variable not set.")
 
