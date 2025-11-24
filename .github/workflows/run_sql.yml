@@ -1,0 +1,17 @@
+name: Run SQL Statement Daily
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # Runs every day at 6am UTC
+
+jobs:
+  run-sql:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install DuckDB CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y duckdb-cli
+      - name: Run SQL Statement
+        run: |
+          duckdb :memory: "SELECT 1;"
